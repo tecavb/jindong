@@ -1,7 +1,7 @@
 <template>
   <div class="search-a">
     <van-icon name="arrow-left" @click="back"></van-icon>
-    <van-search v-model="value" placeholder="请输入搜索关键词" show-action shape="round" @input="onSearch">
+    <van-search v-model="value" :placeholder="phd" show-action shape="round" @input="onSearch">
       <div slot="action" @click="onSearch">搜索</div>
     </van-search>
     <div class="hot" v-if="!value">
@@ -34,6 +34,7 @@ export default {
   name: "search",
   data() {
     return {
+      phd:'',
       data: [],
       show: true,
       value: "",
@@ -52,6 +53,9 @@ export default {
         "小米手环"
       ]
     };
+  },
+  created(){
+    this.phd = this.$route.query.q
   },
   components: {
     "van-search": Search,

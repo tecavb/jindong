@@ -23,11 +23,12 @@
     </div>
     <miao></miao>
     <div class="zes">
-      <img src="../../assets/001.jpg" alt="">
-      <img src="../../assets/002.jpg" alt="">
-      <img src="../../assets/003.jpg" alt="">
-      <img src="../../assets/004.jpg" alt="">
+      <img src="../../assets/001.jpg" alt />
+      <img src="../../assets/002.jpg" alt />
+      <img src="../../assets/003.jpg" alt />
+      <img src="../../assets/004.jpg" alt />
     </div>
+    <list></list>
     <div style="height:8vh"></div>
     <div id="nav">
       <router-link to="/">主页</router-link>
@@ -44,13 +45,15 @@ import top from "@/components/home/top";
 import swipe from "@/components/home/swipe";
 import mune from "@/components/home/mune";
 import miao from "@/components/home/miaosha";
+import list from "@/components/home/list";
 export default {
   name: "home",
   components: {
     "my-top": top,
     swipe: swipe,
     "my-mune": mune,
-    miao: miao
+    miao: miao,
+    list: list
   }
 };
 </script>
@@ -60,9 +63,9 @@ export default {
     width: 33.33vw;
   }
 }
-.zes{
+.zes {
   margin-top: 2vh;
-  img{
+  img {
     width: 50vw;
   }
 }

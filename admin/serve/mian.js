@@ -38,9 +38,24 @@ app.use((req, res, next) => {
         res.send('');
     })
 })
+app.use((req, res, next) => {
+    readFile('../json/list.json').then(data => {
+        req.data1 = JSON.parse(data);
+        next()
+    }).catch(err => {
+        res.status(500);
+        res.send('');
+    })
+})
 app.get('/miao',(req, res) => {
     res.send({
         code: 0,
         data: req.data
+    })
+})
+app.get('/list',(req, res) => {
+    res.send({
+        code: 0,
+        data: req.data1
     })
 })

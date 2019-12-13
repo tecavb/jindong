@@ -5,3 +5,6 @@ let http = axios.create({
 export function miao() {
     return http.get("/miao")
 }
+export function list() {
+    return http.get("/list")
+}
