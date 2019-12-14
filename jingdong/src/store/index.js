@@ -5,19 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    phd:''
   },
   mutations: {
+    setphd(state,option){
+      state.phd = option.data;
+    }
   },
   actions: {
-  //   getHotList({commit},option){
-  //     return miao().then(data=>{
-  //         commit('changeHotList',{
-  //             oldType:option.oldType,
-  //             newType:option.newType,
-  //             data:data.data
-  //         })
-  //     })
-  // }
   },
   modules: {
   }

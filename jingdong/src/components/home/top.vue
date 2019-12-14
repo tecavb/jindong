@@ -27,6 +27,14 @@ export default {
       phd: "t恤"
     };
   },
+  methods: {
+    setp() {
+      this.$store.commit("setphd", { data: this.phd });
+    }
+  },
+  mounted() {
+    this.setp();
+  },
   components: {
     "van-search": Search,
     "van-icon": Icon
@@ -38,7 +46,7 @@ export default {
   background: url("https://m.360buyimg.com/mobilecms/s1125x939_jfs/t1/94833/5/5834/86520/5def760dEfec94275/b9119d925e38cadb.jpg")
     0 -60px;
   background-size: cover;
-  ._top{
+  ._top {
     width: 100vw;
     position: fixed;
     top: 0;

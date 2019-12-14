@@ -9,6 +9,7 @@
         <span>看相似</span>
       </li>
     </ul>
+    <p class="more" @click="dt">加载更多</p>
   </div>
 </template>
 <script>
@@ -16,21 +17,32 @@ import vue from "vue";
 import Lazyload from "vant";
 import { list } from "@/api/home";
 export default {
-  created() {
-    list().then(data => {
-      this.ary = data.data.data;
-    });
-  },
   data() {
     return {
       ary: []
     };
   },
+  created() {
+    list().then(data => {
+      this.ary = data.data.data;
+    });
+  },
+  methods: {
+    dt() {
+      list().then(data => {
+        this.ary = this.ary.concat(data.data.data);
+      });
+    }
+  },
+
   components: {}
 };
 </script>
 <style lang="less" scoped>
 .list {
+  .more {
+    margin-top: 10px;
+  }
   > div {
     height: 5vh;
     font-size: 0;
@@ -38,6 +50,7 @@ export default {
     background-size: contain;
   }
   ul {
+    overflow: hidden;
     font-size: 0;
     li {
       img {
